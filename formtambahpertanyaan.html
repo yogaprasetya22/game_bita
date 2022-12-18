@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Pertanyaan </title>
+    <link rel="stylesheet" href="style-soal.css">
+</head>
+<body>
+  <form method="get" action="tambahSoal.html">
+    <h2> Tambah Pertanyaan </h2>
+    <div class="container">
+        <div class="row">
+          <div class="col-25">
+            <label for="pertanyaan">Pertanyaan </label>
+          </div>
+          <div class="col-75">
+            <textarea id="pertanyaan" name="pertanyaan" placeholder="Silahkan tulis pertanyaan disini.. " style="height:100px" required></textarea>
+          </div>
+        </div> <!-- end form tambah soal pertanyaan-->
+
+        <div class="row">
+          <div class="col-25">
+            <label for="jawabanA">Jawaban A </label>
+          </div>
+          <div class="col-75">
+            <textarea id="jawabanA" name="jawabanA" placeholder="Silahkan tulis jawaban A disini.. " style="height:50px" required></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+              <label for="jawabanB">Jawaban B </label>
+            </div>
+            <div class="col-75">
+              <textarea id="jawabanB" name="jawabanB" placeholder="Silahkan tulis jawaban B disini.. " style="height:50px" required></textarea>
+            </div>
+          </div>
+
+        <div class="row">
+            <div class="col-25">
+              <label for="jawabanC">Jawaban C </label>
+            </div>
+            <div class="col-75">
+              <textarea id="jawabanC" name="jawabanC" placeholder="Silahkan tulis jawaban C disini.. " style="height:50px" required></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+              <label for="jawabanD">Jawaban D </label>
+            </div>
+            <div class="col-75">
+              <textarea id="jawabanD" name="jawabanD" placeholder="Silahkan tulis jawaban D disini.. " style="height:50px" required></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+              <label for="jawabanE">Jawaban E </label>
+            </div>
+            <div class="col-75">
+              <textarea id="jawabanE" name="jawabanE" placeholder="Silahkan tulis jawaban E disini.. " style="height:50px" required></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="kuncijawaban">Kunci Jawaban</label>
+          </div>
+          <div class="col-75">
+            <select id="kuncijawaban" name="kuncijawaban" required>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+            </select>
+          </div>
+        </div><!-- end div kunci jawaban --> 
+
+        <div class="row">
+          <input type="submit" value="Submit">
+        </div>
+    </div> <!-- END DARI CONTAINER -->
+  </form>
+      
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleUno.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="pageuno">
+        <div class="up">
+            <div class="cardup">
+                Total card
+            </div>
+        </div>
+        <div class="left">
+            <div class="cardside1">
+                Total card
+            </div>
+        </div>
+        <div class="center">
+            <div class="cardclose">
+
+            </div>
+            <div id="kartuPertanyaan" class="card">
+                pertanyaan:
+            </div>
+        </div>
+        <div class="right">
+            <div class="cardside2">
+                Total card
+            </div>
+        </div>
+        <div class="down">
+            <div class="tableplayer">
+                <div id="kartu1" class="card">
+                    Dibawah ini pernyataan yang benar mengenai definisi pajak
+                </div>
+                <div id="kartu2"  class="card">
+                    Tarif pajak dimana saat pemungutan pajak akan selalu tetap tanpa melihat jumlah dari keseluruhan dasar pengenaan pajaknya sehingga tarif yang dikenakan besarannya sama bagi seluruh wajib pajak merupakan pengertian tarif …
+                </div>
+                <div id="kartu3"  class="card">
+                    Perhatikan jenis-jenis pajak di bawah ini:<br/>
+                        (1) Pajak penghasilan
+                        (2)	Pajak Reklame
+                        (3)	Pajak Bumi dan Bangunan
+                        (4)	Bea Materai
+                        (5)	Pajak Kendaraan Bermotor
+                        (6)	Pajak Hiburan<br/>
+                        Yang termasuk Pajak Daerah adalah …
+                </div>
+                <div id="kartu4"  class="card">
+                    Sistem pemungutan pajak yang memungkinkan pihak berwenang untuk dengan bebas menentukan jumlah pajak yang harus dibayarkan kepada otoritas pajak atau pemungut pajak. Sistem pemungutan pajak ini disebut …
+                </div>
+            </div>
+            <a href="#">
+                <div class="btnsuno">
+                    UNO
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <script type="module">
+        let kartu1Player = document.querySelector("#kartu1");
+        let kartu2Player = document.querySelector("#kartu2");
+        let kartu3Player = document.querySelector("#kartu3");
+        let kartu4Player = document.querySelector("#kartu4");
+        let kartuPertanyaan = document.querySelector("#kartuPertanyaan");
+
+        kartu1Player.addEventListener("mouseover", () => {
+            kartu1Player.style.width = "250px";
+        });
+        kartu1Player.addEventListener("mouseout", () => {
+            kartu1Player.style.width = "70px";
+        });
+
+        kartu2Player.addEventListener("mouseover", () => {
+            kartu2Player.style.width = "250px";
+        });
+        kartu2Player.addEventListener("mouseout", () => {
+            kartu2Player.style.width = "70px";
+        });
+
+        kartu3Player.addEventListener("mouseover", () => {
+            kartu3Player.style.width = "250px";
+        });
+        kartu3Player.addEventListener("mouseout", () => {
+            kartu3Player.style.width = "70px";
+        });
+
+        kartu4Player.addEventListener("mouseover", () => {
+            kartu4Player.style.width = "250px";
+        });
+        kartu4Player.addEventListener("mouseout", () => {
+            kartu4Player.style.width = "70px";
+        });
+
+        kartu1Player.addEventListener("click", () => {
+            kartuPertanyaan.style.width = "400px";
+            kartuPertanyaan.style.height = "200px"
+            kartuPertanyaan.innerHTML = (`
+                <div>
+                    <label for="pertanyaan">Dibawah ini pernyataan yang benar mengenai definisi pajak, adalah ....</label><br>
+                    <input type="radio" id="a" name="pilihan" value="a"><label for="jawA">Iuran wajib kepada negara sesuai undang-undang  dan tidak mendapatkan balas jasa secara  langsung</label><br>
+                    <input type="radio" id="b" name="pilihan" value="b"><label for="jawB">Iuran yang harus dibayar wajib pajak dan akan memperoleh balas jasa secara langsung</label><br>
+                    <input type="radio" id="c" name="pilihan" value="c"><label for="jawC">Iuran wajib pajak yang dibayar dengan sukarela</label><br>
+                    <input type="radio" id="d" name="pilihan" value="d"><label for="jawD">Iuran wajib pajak yang sifatnya memaksa dan mendapat balas jasa secara langsung</label><br>
+                    <input type="radio" id="e" name="pilihan" value="e"><label for="jawE">Iuran yang diatur dengan undang-undang dan bersifat sukarela</label><br>
+                    <button id="btnJawab"> jawab </button>
+                </div>
+            `);
+        });
+
+        kartu2Player.addEventListener("click", () => {
+            kartuPertanyaan.style.width = "400px";
+            kartuPertanyaan.style.height = "200px"
+            kartuPertanyaan.innerHTML = (`
+                <div>
+                    <label for="pertanyaan">Tarif pajak dimana saat pemungutan pajak akan selalu tetap tanpa melihat jumlah dari keseluruhan dasar pengenaan pajaknya sehingga tarif yang dikenakan besarannya sama bagi seluruh wajib pajak merupakan pengertian tarif …</label><br>
+                    <input type="radio" id="a" name="pilihan" value="a"><label for="jawA">Progresif</label><br>
+                    <input type="radio" id="b" name="pilihan" value="b"><label for="jawB">Degresif</label><br>
+                    <input type="radio" id="c" name="pilihan" value="c"><label for="jawC">Regresif</label><br>
+                    <input type="radio" id="d" name="pilihan" value="d"><label for="jawD">Proporsional</label><br>
+                    <input type="radio" id="e" name="pilihan" value="e"><label for="jawE">Spesifik</label><br>
+                    <button id="btnJawab"> jawab </button>
+                </div>
+            `);
+        });
+
+        kartu3Player.addEventListener("click", () => {
+            kartuPertanyaan.style.width = "400px";
+            kartuPertanyaan.style.height = "200px"
+            kartuPertanyaan.innerHTML = (`
+                <div>
+                    <label for="pertanyaan">Perhatikan jenis-jenis pajak di bawah ini:<br/>
+                        (1) Pajak penghasilan
+                        (2)	Pajak Reklame
+                        (3)	Pajak Bumi dan Bangunan
+                        (4)	Bea Materai
+                        (5)	Pajak Kendaraan Bermotor
+                        (6)	Pajak Hiburan<br/>
+                        Yang termasuk Pajak Daerah adalah …</label><br>
+                    <input type="radio" id="a" name="pilihan" value="a"><label for="jawA">1, 2, 3</label><br>
+                    <input type="radio" id="b" name="pilihan" value="b"><label for="jawB">2, 5, 6</label><br>
+                    <input type="radio" id="c" name="pilihan" value="c"><label for="jawC">2, 3, 5</label><br>
+                    <input type="radio" id="d" name="pilihan" value="d"><label for="jawD">3, 4, 5</label><br>
+                    <input type="radio" id="e" name="pilihan" value="e"><label for="jawE">4, 5, 6</label><br>
+                    <button id="btnJawab"> jawab </button>
+                </div>
+            `);
+        });
+
+        kartu4Player.addEventListener("click", () => {
+            kartuPertanyaan.style.width = "400px";
+            kartuPertanyaan.style.height = "200px"
+            kartuPertanyaan.innerHTML = (`
+                <div>
+                    <label for="pertanyaan">Sistem pemungutan pajak yang memungkinkan pihak berwenang untuk dengan bebas menentukan jumlah pajak yang harus dibayarkan kepada otoritas pajak atau pemungut pajak. Sistem pemungutan pajak ini disebut …</label><br>
+                    <input type="radio" id="a" name="pilihan" value="a"><label for="jawA">Self assessment system</label><br>
+                    <input type="radio" id="b" name="pilihan" value="b"><label for="jawB">Official assessment system</label><br>
+                    <input type="radio" id="c" name="pilihan" value="c"><label for="jawC">Withholding system</label><br>
+                    <input type="radio" id="d" name="pilihan" value="d"><label for="jawD">Multimatic system</label><br>
+                    <input type="radio" id="e" name="pilihan" value="e"><label for="jawE">Capitalization system</label><br>
+                    <button id="btnJawab"> jawab </button>
+                </div>
+            `);
+        });
+    </script>
+</body>
+</html>

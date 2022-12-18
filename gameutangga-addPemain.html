@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form Join Game Ular Tangga</title>
+    <style>
+        /* Tambahan style utk profil pemain */
+        .Character_sprite {
+            overflow: hidden;
+            top: 7px;
+            background: url(./img/characters.png);
+        }
+        .grid-cell {
+            /*position: absolute;*/
+            width: 16px;
+            height: 16px;
+        }
+        .biru {
+            background-position-y: 0px;
+        }
+        .pink {
+            background-position-y: -16px;
+        }
+        .merah {
+            background-position-y: -32px;
+        }
+        .kuning {
+            background-position-y: -48px;
+        }
+        .hijau {
+            background-position-y: -64px;
+        }
+        .ungu {
+            background-position-y: -80px;
+        }
+        .profilIcon {
+            float: left;
+        }
+        .profil {
+            width: auto;
+            padding: 5px;
+        }
+        .kontainerProfil {
+            /*border: solid black;*/
+            /*float: left;*/
+            width: auto;
+            height: auto;
+        }
+        .dadu {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            /*align-content: center;
+            text-align: center;*/
+            background: url(./img/dadu-small.png);
+        }
+        .kontainerDadu {
+            float: left;
+            /*border: solid black;*/
+            top: 25px; 
+            left: 25px;
+            position: relative;
+            text-align: center;
+            font-size: x-large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="logo">
+                <img src="./img/upj.png" alt="Logo UPJ">
+            </div>
+            <div class="logo">
+                <img src="./img/simlitabmas.png" alt="Logo Simlitabmas">
+            </div>
+            <div class="logo">
+                <img src="./img/smk.png" alt="Logo SMK">
+            </div>
+        </div>
+        <div class="content">
+            <div class="title">
+                <h1>Game Ular Tangga</h1>
+            </div>
+            <div class="mainmenu">
+                <div class="boxjoin">
+                    <h3 id="roomName" style="margin-bottom: 0px; padding-left: 15px;"></h3>
+                    <div id="kontainerProfil" class="kontainerProfil" style="padding: 15px; text-align: left;"></div>
+
+
+                    <div id="lblMasuk" style="margin-top: 10px;">[Jika semua sudah hadir tekan tombol masuk]</div>
+                    <button id="masuk" style="visibility: hidden; margin-top: 10px;">MASUK</button> 
+                    <button id="keluar" style="margin-top: 10px">KELUAR</button>
+  
+                </div>
+            </div>
+        </div>
+        <!-- footer>
+            <div class="footer">
+                Developed by: ...
+            </div>
+        </footer-->
+    </div>   
+    
+    <script type="module" src="./gameutangga-init.js"></script>
+    <script type="module" src="./gameutangga-addPemain.js"></script>
+
+</body>
+</html>

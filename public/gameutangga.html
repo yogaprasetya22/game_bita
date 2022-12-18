@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game Ular Tangga Belajar Pajak</title>
+        <style>
+            .Character_sprite {
+                overflow: hidden;
+                top: 7px;
+                background: url(./img/characters.png);
+            }
+            .grid-cell {
+                /*position: absolute;*/
+                width: 16px;
+                height: 16px;
+            }
+            .biru {
+                background-position-y: 0px;
+            }
+            .pink {
+                background-position-y: -16px;
+            }
+            .merah {
+                background-position-y: -32px;
+            }
+            .kuning {
+                background-position-y: -48px;
+            }
+            .hijau {
+                background-position-y: -64px;
+            }
+            .ungu {
+                background-position-y: -80px;
+            }
+            .profilIcon {
+                float: left;
+            }
+            .profil {
+                width: auto;
+                padding: 5px;
+            }
+            .kontainerProfil {
+                /*border: solid black;*/
+                float: left;
+                width: auto;
+                height: auto;
+            }
+            .dadu {
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+                position: relative;
+                /*align-content: center;
+                text-align: center;*/
+                background: url(./img/dadu-small.png);
+            }
+            .kontainerDadu {
+                float: left;
+                /*border: solid black;*/
+                top: 25px; 
+                left: 25px;
+                position: relative;
+                text-align: center;
+                font-size: x-large;
+            }
+            .kontainerSamping {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-end;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"  style="float: left;"></canvas>
+        <div class="kontainerSamping">
+            <div id="kontainerProfil" class="kontainerProfil"></div>
+            <button id="keluar" style="margin-top: 10px">KELUAR</button>
+            
+            <div class="kontainerDadu" id="tombol">
+            <!--
+                <div class="dadu"></div>
+                <div>nama</div>
+            -->
+            </div>
+        </div>
+
+        
+        
+        <script type="module" src="./gameutangga-init.js"></script>
+        <script type="module" src="./js/papan.js"></script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Ular Tangga Belajar Pajak</title>
+    <link rel="stylesheet" href="./styleUlarTangga.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- <h1 class="judul">Ular tangga</h1> -->
+        <!-- <div class="wrapper"> -->
+        <canvas id="canvas"></canvas>
+        <div class="kontainerSamping">
+            <div class="posisiKanan">
+                <button id="keluar">KELUAR</button>
+            </div>
+            <div>
+                <button id ="darkmode" class="posisiKiri ">DARK</button>
+            </div>
+
+
+            <div class="container_dc">
+                <div id="kontainerProfil" class="kontainerProfil">
+                </div>
+                <div class="kontainerDadu" id="tombol">
+
+                </div>
+            </div>
+
+
+            <!-- </div> -->
+        </div>
+    </div>
+
+
+
+    <script type="module" src="./gameutangga-init.js"></script>
+    <script type="module" src="./js/papan.js"></script>
+    <script>
+        const darkmode = document.getElementById('darkmode');
+        darkmode.addEventListener('click', () => {
+            document.body.classList.toggle('dark')
+            document.getElementsByClassName('posisiKiri')[0].classList.toggle('gelap')
+            darkmode.innerHTML = document.body.classList.contains('dark') ? 'LIGHT' : 'DARK';
+        })
+
+        // let showDadu = document.querySelector("#showDadu");
+        // showDadu.style.visibility = "hidden";
+        // showDadu.style.display = "none";
+    </script>
+
+</body>
+
+</html>

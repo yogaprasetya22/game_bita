@@ -1,0 +1,526 @@
+body {
+    background-color: whitesmoke;
+    transition      : all 0.5s ease-out;
+}
+
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+
+
+.container {
+    /* width              : 100%; */
+    height             : 100vh;
+    display            : flex;
+    justify-content    : center;
+    align-items        : center;
+    gap                : 10px;
+    /* background-color: tomato; */
+}
+
+.wrapper {
+    width          : 100%;
+    height         : 100vh;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.judul {
+    font-family: 'Poppins', sans-serif;
+    font-size  : 50px;
+    color      : #000;
+    text-align : center;
+}
+
+.Character_sprite {
+    overflow  : hidden;
+    top       : 7px;
+    background: url(./img/characters.png);
+}
+
+.grid-cell {
+    /*position: absolute;*/
+    width : 16px;
+    height: 16px;
+}
+
+.biru {
+    background-position-y: 0px;
+}
+
+.pink {
+    background-position-y: -16px;
+}
+
+.merah {
+    background-position-y: -32px;
+}
+
+.kuning {
+    background-position-y: -48px;
+}
+
+.hijau {
+    background-position-y: -64px;
+}
+
+.ungu {
+    background-position-y: -80px;
+}
+
+.profilIcon {
+    float: left;
+}
+
+.profil {
+    width  : 6rem;
+    padding: 5px;
+
+}
+
+.conProfil {
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+}
+
+button {
+    box-shadow        : 3px 4px 1px 0px rgba(0, 0, 0, 0.76);
+    -webkit-box-shadow: 3px 4px 1px 0px rgba(0, 0, 0, 0.76);
+    -moz-box-shadow   : 3px 4px 1px 0px rgba(0, 0, 0, 0.76);
+}
+
+
+/* .dadu {
+    cursor                : pointer;
+    width                 : 50px;
+    height                : 50px;
+    top                   : 0;
+    right                 : 0;
+    background            : url(./img/dadu-small.png);
+} */
+
+.dark {
+    background-color: rgba(21, 23, 64, 0.799);
+    transition      : all 0.5s ease-out;
+}
+
+.kontainerSamping {
+    /* display           : block;
+    overflow          : auto; */
+    width             : 38rem;
+    height            : 37.5rem;
+    border-radius     : 10px;
+    padding           : 10px;
+    margin            : 5px;
+    background-color  : rgb(112, 233, 158);
+    box-shadow        : 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+    -webkit-box-shadow: 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+    -moz-box-shadow   : 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+}
+
+#canvas {
+    border-radius     : 10px;
+    border            : solid rgba(0, 0, 0, 0.836);
+    width             : 600px;
+    height            : 600px;
+    box-shadow        : 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+    -webkit-box-shadow: 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+    -moz-box-shadow   : 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+
+}
+
+.kontainerDadu {
+    border-radius   : 10px;
+    padding         : 10px;
+    margin          : 5px;
+    width           : 17rem;
+    height          : 32rem;
+    z-index         : 5;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    background-color: rgb(92, 71, 255);
+}
+
+.kontainerProfil {
+    position              : relative;
+    display               : flex;
+    justify-content       : space-around;
+    text-align            : center;
+    border-radius         : 10px;
+    padding               : 10px;
+    margin                : 5px;
+    width                 : 17rem;
+    background-color      : rgb(238, 73, 73);
+    /* background-image   : url('./img/bgdadu.png'); */
+    object-fit            : cover;
+    background-position   : center;
+    background-size       : cover;
+    background-repeat     : no-repeat;
+    height                : 32rem;
+    flex-wrap             : wrap;
+}
+
+.posisiKanan {
+    float: right;
+
+}
+
+#keluar {
+    position        : relative;
+    top             : 0;
+    left            : 0;
+    cursor          : pointer;
+    background-color: cyan;
+    border-radius   : 15px;
+    padding         : 5px 10px;
+}
+
+#keluar:hover {
+
+    font-size         : 16px;
+    transform         : scale(1.1);
+    transition        : 0.3s;
+    background-color  : rgb(128, 47, 44);
+    color             : rgb(248, 241, 240);
+    border            : 1px solid #8bd3dd;
+    box-shadow        : 4px 4px 0px -2px rgba(52, 51, 51, 0.75);
+    -webkit-box-shadow: 4px 4px 0px -2px rgba(52, 51, 51, 0.75);
+    -moz-box-shadow   : 4px 4px 0px -2px rgba(52, 51, 51, 0.75);
+    font-weight       : bold;
+}
+
+.posisiKiri {
+    position        : relative;
+    top             : 0;
+    left            : 0;
+    cursor          : pointer;
+    background-color: rgb(191, 255, 0);
+    border-radius   : 15px;
+    padding         : 5px 10px;
+}
+
+.gelap {
+    position        : relative;
+    top             : 0;
+    left            : 0;
+    cursor          : pointer;
+    color           : white;
+    background-color: rgb(115, 0, 255);
+    border-radius   : 15px;
+    padding         : 5px 10px;
+}
+
+.container_dc {
+    display           : flex;
+    justify-content   : center;
+    align-items       : center;
+    width             : 100%;
+    margin-top        : 12px;
+    /* margin-left    : -2rem; */
+}
+
+#nama,
+#nama1,
+#nama2,
+#nama3,
+#nama4 {
+    width        : 250px;
+    white-space  : nowrap;
+    overflow     : hidden;
+    text-overflow: ellipsis;
+    padding-left : 10px;
+    font-size    : x-large;
+    font-family  : 'Courier New', Courier, monospace;
+    font-weight  : bold;
+    color        : white;
+    user-select  : none;
+}
+
+
+@media screen and (max-width:1370px) {
+    .container_dc {
+        display           : flex;
+        justify-content   : center;
+        align-items       : center;
+        /* margin-left    : -2rem; */
+    }
+
+    .container {
+        flex-direction: row;
+        height        : 100%;
+        margin        : 2rem 0;
+        gap           : .5rem;
+    }
+
+    #canvas {
+        width : 500px;
+        height: 100%;
+    }
+
+    .kontainerSamping {
+        width : 500px;
+        height: 500px;
+    }
+
+    .kontainerDadu {
+        width : 15rem;
+        height: 27rem;
+    }
+
+    .kontainerProfil {
+        width : 15rem;
+        height: 27rem;
+    }
+}
+
+@media screen and (max-width:1060px) {
+    .container_dc {
+        display           : flex;
+        justify-content   : center;
+        align-items       : center;
+        /* margin-left    : -2rem; */
+    }
+
+    .container {
+        flex-direction: row;
+        height        : 100%;
+        margin        : 2rem 0;
+        gap           : .5rem;
+    }
+
+    #canvas {
+        width : 450px;
+        height: 100%;
+    }
+
+    .kontainerSamping {
+        width : 450px;
+        height: 450px;
+    }
+
+    .kontainerDadu {
+        width : 10rem;
+        height: 23rem;
+    }
+
+    .kontainerProfil {
+        width : 10rem;
+        height: 23rem;
+    }
+}
+
+@media screen and (max-width:810px) {
+    .container_dc {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        margin         : 0;
+    }
+
+    .container {
+        flex-direction   : column;
+        /* height        : 100%; */
+        margin           : 2rem 0;
+        gap              : .2rem;
+    }
+
+    #canvas {
+        width             : 355px;
+        height            : 100%;
+        box-shadow        : 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+        -webkit-box-shadow: 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+        -moz-box-shadow   : 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+    }
+
+    .kontainerSamping {
+        width             : 350px;
+        height            : 100%;
+        box-shadow        : 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+        -webkit-box-shadow: 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+        -moz-box-shadow   : 10px 11px 2px 0px rgba(0, 0, 0, 0.76);
+    }
+
+    .kontainerDadu {
+        width : 12rem;
+        height: auto;
+
+    }
+
+    .kontainerProfil {
+        width : 12rem;
+        height: auto;
+
+    }
+}
+
+
+
+
+/* TODO:    Animate Dadu */
+
+.game {
+    /* position: relative; */
+    width      : auto;
+    /* height  : 100%; */
+    z-index    : 10;
+
+
+}
+
+.container_dadu {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    flex-direction : column;
+
+}
+
+.container_dadu #nama {
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+.dice {
+    width          : 100px;
+    height         : 100px;
+    transform-style: preserve-3d;
+    transition     : transform 1.2s;
+
+}
+
+.dot {
+    position        : absolute;
+    width           : 20px;
+    height          : 20px;
+    margin          : -10px 5px 5px -10px;
+    border-radius   : 20px;
+    background-color: #f25f5c;
+    box-shadow      : inset 2px 2px #d90429;
+}
+
+.dice-one {
+    /* position: absolute; */
+    left: 150px;
+}
+
+
+
+.side {
+    position           : absolute;
+    background-color   : rgb(33, 32, 32);
+    object-fit         : cover;
+    background-position: center;
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    object-fit         : cover;
+    border-radius      : 5px;
+    width              : 100px;
+    height             : 100px;
+    border             : 1px solid #e5e5e5;
+    text-align         : center;
+    line-height        : 2em;
+}
+
+.side:nth-child(1) {
+    transform: translateZ(3.1em);
+}
+
+.side:nth-child(6) {
+    transform: rotateY(90deg) translateZ(3.1em);
+}
+
+.side:nth-child(3) {
+    transform: rotateY(-90deg) translateZ(3.1em);
+}
+
+.side:nth-child(4) {
+    transform: rotateX(90deg) translateZ(3.1em);
+}
+
+.side:nth-child(5) {
+    transform: rotateX(-90deg) translateZ(3.1em);
+}
+
+.side:nth-child(2) {
+    transform: rotateY(-180deg) translateZ(3.1em);
+}
+
+.show-1 {
+    transform: rotateX(720deg) rotateZ(-720deg);
+}
+
+.show-2 {
+    transform: rotateX(-900deg) rotateZ(1080deg);
+}
+
+.show-3 {
+    transform: rotateY(810deg) rotateZ(720deg);
+}
+
+.show-4 {
+    transform: rotateX(-810deg) rotateZ(-1080deg);
+}
+
+.show-5 {
+    transform: rotateX(450deg) rotateZ(-720deg);
+}
+
+.show-6 {
+    transform: rotateY(-450deg) rotateZ(-1440deg);
+}
+
+.two-1,
+.three-1,
+.four-1,
+.five-1,
+.six-1 {
+    top : 20%;
+    left: 20%;
+}
+
+.four-3,
+.five-3,
+.six-4 {
+    top : 20%;
+    left: 80%;
+}
+
+.one-1,
+.three-2,
+.five-5 {
+    top : 50%;
+    left: 50%;
+}
+
+.four-2,
+.five-2,
+.six-3 {
+    top : 80%;
+    left: 20%;
+}
+
+.two-2,
+.three-3,
+.four-4,
+.five-4,
+.six-6 {
+    top : 80%;
+    left: 80%;
+}
+
+.six-2 {
+    top : 50%;
+    left: 20%;
+}
+
+.six-5 {
+    top : 50%;
+    left: 80%;
+}

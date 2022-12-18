@@ -1,0 +1,93 @@
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": false,
+    "soalPajak": {
+      	".write": "auth !== null",
+        ".indexOn":"no"
+    },
+    "room": {
+      	".write": "auth !== null",
+        "room1": {
+        		"paraPemain": {
+          			".indexOn": "urutan",
+          			"$uid": {
+            				".write": "auth !=null && auth.uid == $uid",
+          			}
+        		}
+    		},
+        "room2": {
+            "paraPemain": {
+                ".indexOn": "urutan",
+                "$uid": {
+                  	".write": "auth !=null && auth.uid == $uid",
+                }
+            }
+        },
+        "room3": {
+            "paraPemain": {
+                ".indexOn": "urutan",
+                "$uid": {
+                  	".write": "auth !=null && auth.uid == $uid",
+                }
+            }
+        },
+        "room4": {
+            "paraPemain": {
+                ".indexOn": "urutan",
+                "$uid": {
+                  	".write": "auth !=null && auth.uid == $uid",
+                }
+            }
+        },
+        "room5": {
+            "paraPemain": {
+                ".indexOn": "urutan",
+                "$uid": {
+                  	".write": "auth !=null && auth.uid == $uid",
+                }
+            }
+        },
+        "room6": {
+            "paraPemain": {
+                ".indexOn": "urutan",
+                "$uid": {
+                  	".write": "auth !=null && auth.uid == $uid",
+                }
+            }
+        },
+        "room7": {
+            "paraPemain": {
+                ".indexOn": "urutan",
+                "$uid": {
+                  	".write": "auth !=null && auth.uid == $uid",
+                }
+            }
+        },
+        "room8": {
+            "paraPemain": {
+                ".indexOn": "urutan",
+                "$uid": {
+                  	".write": "auth !=null && auth.uid == $uid",
+                }
+            }
+        },
+        "room9": {
+            "paraPemain": {
+                ".indexOn": "urutan",
+                "$uid": {
+                  	".write": "auth !=null && auth.uid == $uid",
+                }
+            }
+        },
+        "room10": {
+            "paraPemain": {
+                ".indexOn": "urutan",
+                "$uid": {
+                  	".write": "auth !=null && auth.uid == $uid",
+                }
+            }
+        }
+    }
+  }
+}
