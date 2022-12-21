@@ -37,35 +37,56 @@ body {
 }
 
 .Character_sprite {
-    overflow  : hidden;
-    top       : 7px;
-    background: url(./img/characters.png);
+    overflow     : hidden;
+    top          : 7px;
+    /* background: url(./img/characters.png); */
 }
 
 .grid-cell {
     /*position: absolute;*/
-    width : 16px;
-    height: 16px;
+    height     : 56px;
+    width      : 176px;
+    margin-left: 30px;
 }
 
 .biru {
-    background-position-y: 0px;
+    /* background-position-y: 0px; */
+    background       : url(./img/snail.png);
+    background-size  : 60px;
+    background-repeat: no-repeat;
+    z-index          : 2;
 }
 
 .pink {
-    background-position-y: -16px;
+    /* background-position-y: -16px; */
+    background       : url(./img/af00.png);
+    background-size  : 30px;
+    background-repeat: no-repeat;
+    z-index          : 2;
 }
 
 .merah {
-    background-position-y: -32px;
+    /* background-position-y: -32px; */
+    background       : url(./img/af00.png);
+    background-size  : 60px;
+    background-repeat: no-repeat;
+    z-index          : 2;
 }
 
 .kuning {
-    background-position-y: -48px;
+    /* background-position-y: -48px; */
+    background       : url(./img/skeleton-animation_00.png);
+    background-size  : 60px;
+    background-repeat: no-repeat;
+    z-index          : 2;
 }
 
 .hijau {
-    background-position-y: -64px;
+    /* background-position-y: -64px; */
+    background       : url(./img/player4.png);
+    background-size  : 60px;
+    background-repeat: no-repeat;
+    z-index          : 2;
 }
 
 .ungu {
@@ -235,7 +256,7 @@ button {
     overflow     : hidden;
     text-overflow: ellipsis;
     padding-left : 10px;
-    font-size    : x-large;
+    font-size    : 19px;
     font-family  : 'Courier New', Courier, monospace;
     font-weight  : bold;
     color        : white;

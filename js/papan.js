@@ -91,25 +91,30 @@ let ambilSoal = () => {
 };
 
 //----------------------------------------------------------------------------
-const canvas = document.getElementById('canvas'),
-      _canvasObj = new Canvas2dGraphics(canvas),
-      WIDTH = 700,
-      HEIGHT = 700,
-      numCol = 10,
-      numRow = 10,
-      boxSize = WIDTH/numCol,
-      player1Color="#81d2f9", /*warna player1 #81d2f9: cyan*/
-      player2Color='#991a00', /*warna player2 #ffa290: light red, #991a00: dark red */
-      player3Color="#ffff00", /*warna player1 #ffec98: light yellow, #ffff00: kuning stabilo */
-      player4Color='#a7ff65' /*warna player2 #a7ff65: lime green */ 
-      ;
+const canvas = document.getElementById("canvas"),
+    _canvasObj = new Canvas2dGraphics(canvas),
+    // WIDTH = innerWidth - 30,
+    // HEIGHT = innerHeight - 20,
+    // numCol = WIDTH / 180,
+    // numRow = HEIGHT / 90,
+    WIDTH = 700,
+    HEIGHT = 700,
+    numCol = 10,
+    numRow = 10,
+    boxSize = WIDTH / numCol,
+    player1Color = "#81d2f9" /*warna player1 #81d2f9: cyan*/,
+    player2Color =
+        "#991a00" /*warna player2 #ffa290: light red, #991a00: dark red */,
+    player3Color =
+        "#ffff00" /*warna player1 #ffec98: light yellow, #ffff00: kuning stabilo */,
+    player4Color = "#a7ff65"; /*warna player2 #a7ff65: lime green */
 
 // variabels
 var boxArr = [],
     x = 0,
-    y = (numRow-1)*boxSize,
-    dir=1,
-    snake1 = new Image(), /*** membuat object ular 1 */
+    y = (numRow - 1) * boxSize,
+    dir = 1,
+    snake1 = new Image() /*** membuat object ular 1 */,
     snake2 = new Image(),
     snake3 = new Image(),
     snake4 = new Image(),
@@ -119,38 +124,48 @@ var boxArr = [],
     ladder3 = new Image(),
     ladder4 = new Image(),
     ladder5 = new Image(),
-    player1 = new Player(player1Color,1), /*** membuat object player 1 urutan 1 */
-    player2 = new Player(player2Color,2),  /*** membuat object player 2 urutan 2 */
-    player3 = new Player(player3Color,3), /*** membuat object player 1 urutan 1 */
-    player4 = new Player(player4Color,4),  /*** membuat object player 2 urutan 2 */
+    player1 = new Player(
+        "../img/snail.png",
+        1
+    ) /*** membuat object player 1 urutan 1 */,
+    player2 = new Player(
+        player2Color,
+        2
+    ) /*** membuat object player 2 urutan 2 */,
+    player3 = new Player(
+        player3Color,
+        3
+    ) /*** membuat object player 1 urutan 1 */,
+    player4 = new Player(
+        player4Color,
+        4
+    ) /*** membuat object player 2 urutan 2 */,
     /*** mengatur pergantian pemain jalan dengan true/flase */
-    isPlayer1Turn = true, /*** player 1 jalan duluan */
+    isPlayer1Turn = true /*** player 1 jalan duluan */,
     isPlayer2Turn = false,
     isPlayer3Turn = false,
-    isPlayer4Turn = false
-    ; 
-
-snake1.src = './img/snake4.png';
-snake2.src = './img/snake2.png';
-snake3.src = './img/snake3.png';
-snake4.src = './img/snake1.png';
-snake5.src = './img/snake4.png';
-ladder1.src = './img/ladder1.png';
-ladder2.src = './img/ladder1.png';
-ladder3.src = './img/ladder2.png';
-ladder4.src = './img/ladder2.png';
-ladder5.src = './img/ladder1.png';
+    isPlayer4Turn = false;
+snake1.src = "./img/snake4.png";
+snake2.src = "./img/snake2.png";
+snake3.src = "./img/snake3.png";
+snake4.src = "./img/snake1.png";
+snake5.src = "./img/snake4.png";
+ladder1.src = "./img/ladder1.png";
+ladder2.src = "./img/ladder1.png";
+ladder3.src = "./img/ladder2.png";
+ladder4.src = "./img/ladder2.png";
+ladder5.src = "./img/ladder1.png";
 
 canvas.width = WIDTH;
 canvas.height = HEIGHT;
 
 //membuat papan permainan
-for(let i=0; i<numCol*numRow; i++){
-    boxArr.push(new Box(x, y, boxSize,i));
-    x = x+boxSize*dir;
-    if(x>=WIDTH || x<=-boxSize){
+for (let i = 0; i < numCol * numRow; i++) {
+    boxArr.push(new Box(x, y, boxSize, i));
+    x = x + boxSize * dir;
+    if (x >= WIDTH || x <= -boxSize) {
         dir *= -1;
-        x += boxSize*dir;
+        x += boxSize * dir;
         y -= boxSize;
     }
 }
@@ -159,24 +174,61 @@ for(let i=0; i<numCol*numRow; i++){
 function Player(color, playerNumber) {
     this.position = 0;
     this.color = color;
+    this.images = new Image();
+    this.images1 = new Image();
+    this.images2 = new Image();
+    this.images3 = new Image();
+    this.images.src = `./img/snail.png`;
+    this.images1.src = `./img/af00.png`;
+    this.images2.src = `./img/skeleton-animation_00.png`;
+    this.images3.src = `./img/player4.png`;
     this.playerNumber = playerNumber;
     this.isActive = false; //status player
 
     //draw Player function
-    this.drawPlayer = function() {
-        /** 
-         * boxArr[1].x = 1 langkah x , boxArr[1].y = 1 langkah y, 
-         * boxArr[2].x = 2 langkah x , boxArr[2].y = 2 langkah y,  ...dst 
+    this.drawPlayer = function () {
+        /**
+         * boxArr[1].x = 1 langkah x , boxArr[1].y = 1 langkah y,
+         * boxArr[2].x = 2 langkah x , boxArr[2].y = 2 langkah y,  ...dst
          */
-        let currentPos=boxArr[this.position]; 
-        switch(this.playerNumber) {
-            case 1: _canvasObj.FillCircle(currentPos.x + currentPos.size/4, currentPos.y + currentPos.size/2.5, boxSize/6, 0, 2*Math.PI, false, this.color);
+        let currentPos = boxArr[this.position];
+        switch (this.playerNumber) {
+            case 1:
+                _canvasObj.DrawImageWH(
+                    this.images,
+                    currentPos.x + currentPos.size / 5.6,
+                    currentPos.y + currentPos.size / 3.5,
+                    32,
+                    32
+                ); // kotak 64 to 21
                 break;
-            case 2: _canvasObj.FillCircle(currentPos.x + currentPos.size/1.6, currentPos.y + currentPos.size/2.5, boxSize/6, 0, 2*Math.PI, false, this.color);
+            case 2:
+                _canvasObj.DrawImageWH(
+                    this.images1,
+                    currentPos.x + currentPos.size / 2.6,
+                    currentPos.y + currentPos.size / 5.5,
+                    32,
+                    32
+                ); // kotak 64 to 21
                 break;
-            case 3: _canvasObj.FillCircle(currentPos.x + currentPos.size/4, currentPos.y + currentPos.size/1.3, boxSize/6, 0, 2*Math.PI, false, this.color);
                 break;
-            case 4: _canvasObj.FillCircle(currentPos.x + currentPos.size/1.6, currentPos.y + currentPos.size/1.3, boxSize/6, 0, 2*Math.PI, false, this.color);
+            case 3:
+                _canvasObj.DrawImageWH(
+                    this.images2,
+                    currentPos.x + currentPos.size / 5.6,
+                    currentPos.y + currentPos.size / 3.5,
+                    32,
+                    32
+                );
+                break;
+            case 4:
+                _canvasObj.DrawImageWH(
+                    this.images3,
+                    currentPos.x + currentPos.size / 5.6,
+                    currentPos.y + currentPos.size / 3.5,
+                    32,
+                    32
+                );
                 break;
         }
 
