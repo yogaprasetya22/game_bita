@@ -934,10 +934,6 @@ const w = 0; //Hanya agar function dibawah dianggap sbg function
                 updates[`/${arrKey[parUrutan]}/status`] = "hidden"; //status tombol pemain skrg di hidden
                 update(paraPemainRef, updates);
             }, 2000);
-        } else {
-            updates[`/${arrKey[nextUrutan]}/status`] = "visible"; //status tombol pemain berikutnya di visible
-            updates[`/${arrKey[parUrutan]}/status`] = "hidden"; //status tombol pemain skrg di hidden
-            update(paraPemainRef, updates);
         }
     };
 
@@ -1006,7 +1002,7 @@ const w = 0; //Hanya agar function dibawah dianggap sbg function
             function rollDice(diceOne, jawab) {
                 for (let i = 1; i <= 6 && i >= 0; i++) {
                     elDiceOne.classList.remove("show-" + i);
-                    if (diceOne === i && jawab === true) {
+                    if (diceOne === i && jawab) {
                         elDiceOne.classList.add("show-" + i);
                         return (jalan = true);
                     }
