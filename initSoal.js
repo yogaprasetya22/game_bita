@@ -2,26 +2,26 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
 
 // const firebaseConfig = {
-//     apiKey: "AIzaSyC-PvC6ZqWm_D-zmSUP9-AjxtskQ-wTZ4E",
-//     authDomain: "hosting-f08fc.firebaseapp.com",
+//     apiKey: "AIzaSyBQ8-oh0IZjrEHspUZHLlRQAEWekQST4gQ",
+//     authDomain: "soalgames-ec644.firebaseapp.com",
 //     databaseURL:
-//         "https://hosting-f08fc-default-rtdb.asia-southeast1.firebasedatabase.app",
-//     projectId: "hosting-f08fc",
-//     storageBucket: "hosting-f08fc.appspot.com",
-//     messagingSenderId: "703982024612",
-//     appId: "1:703982024612:web:66db1de1b17d46f8883331",
+//         "https://soalgames-ec644-default-rtdb.asia-southeast1.firebasedatabase.app",
+//     projectId: "soalgames-ec644",
+//     storageBucket: "soalgames-ec644.appspot.com",
+//     messagingSenderId: "67561633096",
+//     appId: "1:67561633096:web:f7f55ca9a2593b72ec6f7d",
 // };
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDj4eR4TBfMe_f6achu0NmZAsqr0eX7_Gk",
-    authDomain: "game-ulartangga-5ab5f.firebaseapp.com",
-    databaseURL:
-        "https://game-ulartangga-5ab5f-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "game-ulartangga-5ab5f",
-    storageBucket: "game-ulartangga-5ab5f.appspot.com",
-    messagingSenderId: "60424823785",
-    appId: "1:60424823785:web:4c10605487cf720700a178",
-};
+  const firebaseConfig = {
+      apiKey: "AIzaSyBQ8-oh0IZjrEHspUZHLlRQAEWekQST4gQ",
+      authDomain: "soalgames-ec644.firebaseapp.com",
+      databaseURL:
+          "https://soalgames-ec644-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "soalgames-ec644",
+      storageBucket: "soalgames-ec644.appspot.com",
+      messagingSenderId: "67561633096",
+      appId: "1:67561633096:web:f7f55ca9a2593b72ec6f7d",
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
